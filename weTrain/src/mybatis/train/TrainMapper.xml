@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.we.dao.TrainMapper" >
+	<sql id="Oracle_Dialect_Suffix">
+		<if test="page != null">
+      		<![CDATA[  limit #{page.beginRowNo}, #{page.pageSize} ]]>
+		</if>
+	</sql>
+	<sql id="orderby_id_desc">
+	    ORDER BY Id DESC
+	</sql>
+	
+	<select id="selectCount" parameterType="map" resultType="INTEGER">
+		SELECT count(*) FROM `t_110106009023_person`
+	</select>
+</mapper>
