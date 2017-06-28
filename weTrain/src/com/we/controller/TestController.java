@@ -35,15 +35,15 @@ public class TestController {
 	
 	
 	
-	@RequestMapping("show")
+	@RequestMapping("index")
 	public String show(){
-		return "show";
+		return "index/index";
 	}
 	
 	@RequestMapping("list")
 	@ResponseBody
 	public String msg(){
-		String url ="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date=2017-06-27&leftTicketDTO.from_station=BJP&leftTicketDTO.to_station=BMP&purpose_codes=ADULT";
+		String url ="https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date=2017-06-29&leftTicketDTO.from_station=BJP&leftTicketDTO.to_station=BMP&purpose_codes=ADULT";
 		return PostUtil.doGetString(url);
 	}
 	
